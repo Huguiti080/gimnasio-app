@@ -28,3 +28,4 @@ jobs:
         with:
           folder: dist/gimnasio-app  # Ajusta esta ruta según la estructura de tu proyecto
           branch: gh-pages
+          token: ${{ secrets.GITHUB_TOKEN }}
