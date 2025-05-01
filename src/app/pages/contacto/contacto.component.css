@@ -1,0 +1,24 @@
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0 auto;
+    width: 80%;
+  }
+  
+  .contact-form input, .contact-form textarea, .contact-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .contact-form button {
+    background-color: gold;
+    color: black;
+    cursor: pointer;
+  }
+  
+  .location iframe {
+    border-radius: 8px;
+  }
+  
