@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavbarComponent } from '../navbar/navbar.component'; // Ajusta la ruta según la ubicación de tu NavBarComponent
+import { NavbarComponent } from '../navbar/navbar.component'; 
 import { CommonModule } from '@angular/common';
 
 @Component({
