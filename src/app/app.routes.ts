@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
+import { PlanesComponent } from './pages/planes/planes.component';
 import { ClasesComponent } from './pages/clases/clases.component';
 import { ServiciosComponent } from './pages/servicios/servicios.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
@@ -10,6 +11,7 @@ import { authGuard } from './services/auth.guard';
 export const routes: Routes = [
   { path: '', redirectTo: 'inicio', pathMatch: 'full' },
   { path: 'inicio', component: HomeComponent },
+  { path: 'Planes', component: PlanesComponent },
   { path: 'clases', component: ClasesComponent },
   { path: 'servicios', component: ServiciosComponent },
   { path: 'contacto', component: ContactoComponent },
