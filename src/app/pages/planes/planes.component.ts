@@ -9,50 +9,7 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./planes.component.css']
 })
 export class PlanesComponent {
-  plans = [
-    {
-      name: 'Básico',
-      price: '$9.99',
-      features: [
-        'Acceso a funciones básicas',
-        'Soporte por correo electrónico',
-        'Hasta 5 proyectos activos',
-        '10GB de almacenamiento'
-      ],
-      ctaText: 'Empezar gratis',
-      ctaLink: '/registro?plan=basico',
-      recommended: false
-    },
-    {
-      name: 'Profesional',
-      price: '$19.99',
-      features: [
-        'Todas las funciones básicas',
-        'Soporte prioritario',
-        'Proyectos ilimitados',
-        '50GB de almacenamiento',
-        'Informes avanzados'
-      ],
-      ctaText: 'Prueba 7 días gratis',
-      ctaLink: '/registro?plan=profesional',
-      recommended: true
-    },
-    {
-      name: 'Empresa',
-      price: '$49.99',
-      features: [
-        'Todas las funciones profesionales',
-        'Soporte 24/7',
-        'Almacenamiento ilimitado',
-        'Usuarios ilimitados',
-        'Integraciones premium'
-      ],
-      ctaText: 'Contactar ventas',
-      ctaLink: '/contacto',
-      recommended: false
-    }
-  ];
-
+  
   faqs = [
     {
       question: '¿Puedo cambiar de plan más tarde?',
