@@ -15,24 +15,40 @@ export class ContactoComponent {
     nombre: '',
     correo: '',
     asunto: '',
-    mensaje: ''
+    mensaje: '',
+    motivo: '',
+    urgencia: '',
+    fecha: ''
   };
 
-  // Para mostrar errores solo si el campo fue tocado o modificado
-  mostrarError(campo: any): boolean {
-    return campo?.invalid && (campo?.touched || campo?.dirty);
+  motivos: string[] = [
+    'Consulta general',
+    'Problema con membresía',
+    'Sugerencia',
+    'Reclamo',
+    'Otro'
+  ];
+
+  // Fecha mínima (hoy)
+  fechaMinima: string = new Date().toISOString().split('T')[0];
+
+  esFechaAnterior(): boolean {
+    if (!this.contacto.fecha) return false;
+    const hoy = new Date();
+    hoy.setHours(0, 0, 0, 0);
+    const seleccionada = new Date(this.contacto.fecha);
+    seleccionada.setHours(0, 0, 0, 0);
+    return seleccionada < hoy;
   }
 
   enviarFormulario(form: NgForm) {
-    if (form.valid) {
+    if (form.valid && !this.esFechaAnterior()) {
       console.log('Mensaje enviado:', this.contacto);
 
-      // Guardar en localStorage (opcional)
       const mensajes = JSON.parse(localStorage.getItem('mensajesContacto') || '[]');
       mensajes.push(this.contacto);
       localStorage.setItem('mensajesContacto', JSON.stringify(mensajes));
 
-      // Alerta SweetAlert
       Swal.fire({
         icon: 'success',
         title: 'Mensaje enviado',
@@ -40,7 +56,6 @@ export class ContactoComponent {
         confirmButtonColor: '#f0ad4e'
       });
 
-      // Limpiar el formulario
       form.resetForm();
     }
   }
