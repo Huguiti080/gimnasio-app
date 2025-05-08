@@ -1,6 +1,5 @@
-/* --- Fondo general con imagen --- */
 .fondo-con-imagen {
-  background-image: url('/assets/imagenes/Formulario/Ejercicio2.png'); /* o usa public si prefieres */
+  background-image: url('/assets/imagenes/Formulario/Ejercicio2.png'); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -11,7 +10,6 @@
   padding: 40px;
 }
 
-/* --- Contenedor del formulario con fondo oscuro --- */
 .contenido-formulario {
   background-color: rgba(0, 0, 0, 0.75);
   padding: 30px;
@@ -21,14 +19,12 @@
   animation: fadeInUp 1s ease forwards;
 }
 
-/* --- Estilo del formulario y campos --- */
 form {
   padding: 20px;
   background-color: #121212;
   border-radius: 10px;
 }
 
-/* --- Inputs, selects, textarea --- */
 input, select, textarea {
   background-color: #1e1e1e;
   color: orange;

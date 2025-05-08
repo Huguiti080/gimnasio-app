@@ -1,7 +1,6 @@
-/* Fondo del formulario (opcional si quieres darle más estilo) */
 form {
   padding: 20px;
-  background-color: #121212; /* Un negro más suave */
+  background-color: #121212; 
   border-radius: 10px;
   max-width: 500px;
   margin: 0 auto;
@@ -45,7 +44,7 @@ small {
 }
 
 .fondo-con-imagen {
-  background-image: url('/assets/imagenes/Formulario/Ejercicio1.png'); /* O usa public */
+  background-image: url('/assets/imagenes/Formulario/Ejercicio1.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -56,7 +55,6 @@ small {
   padding: 40px;
 }
 
-/* Contenedor del formulario con fondo y animación */
 .contenido-formulario {
   background-color: rgba(0, 0, 0, 0.75);
   padding: 30px;
