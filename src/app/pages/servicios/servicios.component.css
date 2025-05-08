@@ -1,0 +1,30 @@
+.cards {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .card {
+    background-color: gold;
+    color: black;
+    padding: 15px;
+    border-radius: 8px;
+    width: 150px;
+    text-align: center;
+  }
+  
+  .pricing ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .pricing li {
+    background-color: black;
+    color: gold;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
