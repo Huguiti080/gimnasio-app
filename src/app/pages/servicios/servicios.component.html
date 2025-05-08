@@ -1,18 +1,61 @@
-<section class="services-list">
-    <h2>Nuestros Servicios</h2>
-    <div class="cards">
-      <div class="card">Entrenamiento Personalizado</div>
-      <div class="card">Nutrición</div>
-      <div class="card">Clases Grupales</div>
+<div class="fondo-con-imagen">
+    <div class="contenido-formulario">
+  
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <div class="card bg-dark text-warning shadow-lg border-warning">
+          <div class="card-body">
+            <h3 class="card-title text-center mb-4">Regístrate al Gimnasio</h3>
+  
+            <form [formGroup]="formulario" (ngSubmit)="guardar()">
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre:</label>
+                <input id="nombre" type="text" class="form-control bg-dark text-warning border-warning" formControlName="nombre" placeholder="Tu nombre completo" />
+                <div *ngIf="mostrarError('nombre')" class="form-text text-danger">
+                  <small *ngIf="formulario.get('nombre')?.errors?.['required']">El nombre es obligatorio.</small>
+                  <small *ngIf="formulario.get('nombre')?.errors?.['minlength']">Debe tener al menos 3 caracteres.</small>
+                </div>
+              </div>
+  
+              <div class="mb-3">
+                <label for="correo" class="form-label">Correo:</label>
+                <input id="correo" type="email" class="form-control bg-dark text-warning border-warning" formControlName="correo" placeholder="ejemplo@correo.com" />
+                <div *ngIf="mostrarError('correo')" class="form-text text-danger">
+                  <small *ngIf="formulario.get('correo')?.errors?.['required']">El correo es obligatorio.</small>
+                  <small *ngIf="formulario.get('correo')?.errors?.['email']">Debe ser un correo válido.</small>
+                </div>
+              </div>
+  
+              <div class="mb-3">
+                <label for="telefono" class="form-label">Teléfono:</label>
+                <input id="telefono" type="text" class="form-control bg-dark text-warning border-warning" formControlName="telefono" placeholder="10 dígitos" />
+                <div *ngIf="mostrarError('telefono')" class="form-text text-danger">
+                  <small *ngIf="formulario.get('telefono')?.errors?.['required']">El teléfono es obligatorio.</small>
+                  <small *ngIf="formulario.get('telefono')?.errors?.['pattern']">Debe tener exactamente 10 dígitos.</small>
+                </div>
+              </div>
+  
+              <div class="mb-4">
+                <label for="servicio" class="form-label">Servicio:</label>
+                <select id="servicio" class="form-select bg-dark text-warning border-warning" formControlName="servicio">
+                  <option value="" disabled selected>Selecciona un servicio</option>
+                  <option value="asesoria">Asesoría</option>
+                  <option value="entrenamiento">Entrenamiento</option>
+                  <option value="nutricion">Nutrición</option>
+                </select>
+                <div *ngIf="mostrarError('servicio')" class="form-text text-danger">
+                  <small *ngIf="formulario.get('servicio')?.errors?.['required']">Debe seleccionar un servicio.</small>
+                </div>
+              </div>
+  
+              <button type="submit" class="btn btn-warning w-100" [disabled]="formulario.invalid">Enviar</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
-  
-  <section class="pricing">
-    <h2>Paquetes</h2>
-    <ul>
-      <li>Básico: $500/mes</li>
-      <li>Premium: $800/mes</li>
-      <li>VIP: $1200/mes</li>
-    </ul>
-  </section>
-  
+  </div>
+</div>
+</div>
