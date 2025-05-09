@@ -1,0 +1,34 @@
+<div class="registro-container">
+    <h2>Registros de Contacto</h2>
+  
+    @if (mensajes.length > 0) {
+      <ul>
+        @for (m of mensajes; track m) {
+          <li>
+            <strong>#{{ $index + 1 }}:</strong>
+  
+            @if (!modoEdicion || $index !== indexEditando) {
+              <span>{{ m | json }}</span>
+            }
+  
+            @if (modoEdicion && $index === indexEditando) {
+              <div class="editar-formulario">
+                <textarea [(ngModel)]="mensajeEditando.mensaje"></textarea>
+                <button (click)="guardarCambios()">Guardar</button>
+                <button (click)="cancelarEdicion()">Cancelar</button>
+              </div>
+            }
+  
+            <button (click)="editarMensaje($index)">Editar</button>
+            <button (click)="eliminarMensaje($index)">Eliminar</button>
+          </li>
+        }
+      </ul>
+    }
+  
+    @if (mensajes.length === 0) {
+      <p>No hay mensajes guardados.</p>
+    }
+  
+    <button routerLink="/registro">Volver</button>
+  </div>  

@@ -6,6 +6,7 @@ import { ServiciosComponent } from './pages/servicios/servicios.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './pages/registro/registro.component';
+import { ContactoregistroComponent } from './pages/contactoregistro/contactoregistro.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { authGuard } from './services/auth.guard';
 
@@ -18,6 +19,7 @@ export const routes: Routes = [
   { path: 'contacto', component: ContactoComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registro', component: RegistroComponent },
+  { path: 'contactoregistro', component: ContactoregistroComponent },
   { path: 'admin', component: AdminDashboardComponent, canActivate: [authGuard] },
   { path: '**', redirectTo: 'inicio' }
 ];
