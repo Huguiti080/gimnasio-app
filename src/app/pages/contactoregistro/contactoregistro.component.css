@@ -62,6 +62,22 @@
     border-radius: 10px;
     margin-top: 10px;
   }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    background-color: #121212;
+    color: orange;
+    border: 1px solid orange;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  label {
+    color: orange;
+    display: block;
+    margin-top: 10px;
+  }  
   
   @keyframes fadeInUp {
     from {
@@ -73,3 +89,5 @@
       transform: translateY(0);
     }
   }  
+
+  

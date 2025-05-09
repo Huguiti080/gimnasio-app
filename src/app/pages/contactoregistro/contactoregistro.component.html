@@ -13,9 +13,22 @@
   
             @if (modoEdicion && $index === indexEditando) {
               <div class="editar-formulario">
-                <textarea [(ngModel)]="mensajeEditando.mensaje"></textarea>
-                <button (click)="guardarCambios()">Guardar</button>
-                <button (click)="cancelarEdicion()">Cancelar</button>
+                <form (ngSubmit)="guardarCambios()">
+                  <label>Nombre:
+                    <input [(ngModel)]="mensajeEditando.nombre" name="nombre" required>
+                  </label>
+                  <label>Correo:
+                    <input [(ngModel)]="mensajeEditando.correo" name="correo" required>
+                  </label>
+                  <label>Teléfono:
+                    <input [(ngModel)]="mensajeEditando.telefono" name="telefono" required>
+                  </label>
+                  <label>Mensaje:
+                    <textarea [(ngModel)]="mensajeEditando.mensaje" name="mensaje" required></textarea>
+                  </label>
+                  <button type="submit">Guardar</button>
+                  <button type="button" (click)="cancelarEdicion()">Cancelar</button>
+                </form>
               </div>
             }
   
