@@ -36,7 +36,7 @@ export class RegistroComponent {
     this.tipo = tipoSeleccionado;
     this.modoSeleccion = true;
 
-    const data = localStorage.getItem('datosRegistrados');
+    const data = localStorage.getItem('registros');
     this.registros = data ? JSON.parse(data) : [];
   }
 
@@ -49,7 +49,7 @@ export class RegistroComponent {
 
   eliminarRegistro(index: number) {
     this.registros.splice(index, 1);
-    localStorage.setItem('datosRegistrados', JSON.stringify(this.registros));
+    localStorage.setItem('registros', JSON.stringify(this.registros));
   }
 
   editarRegistro(index: number) {
@@ -61,7 +61,7 @@ export class RegistroComponent {
   guardarEdicion() {
     if (this.indexEditando !== -1) {
       this.registros[this.indexEditando] = this.registroEditado;
-      localStorage.setItem('datosRegistrados', JSON.stringify(this.registros));
+      localStorage.setItem('registros', JSON.stringify(this.registros));
       this.cancelarEdicion();
     }
   }
