@@ -1,24 +1,129 @@
-.contact-form form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin: 0 auto;
-    width: 80%;
+.fondo-con-imagen {
+  background-image: url('/assets/imagenes/Formulario/Ejercicio2.png'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.contenido-formulario {
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 1200px;
+  width: 100%;
+  animation: fadeInUp 1s ease forwards;
+}
+
+form {
+  padding: 20px;
+  background-color: #121212;
+  border-radius: 10px;
+}
+
+input, select, textarea {
+  background-color: #1e1e1e;
+  color: orange;
+  border: 1px solid orange;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* --- Etiquetas --- */
+label {
+  color: orange;
+  font-weight: bold;
+}
+
+/* --- Botón --- */
+button {
+  background-color: orange;
+  color: black;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #e6b800;
+}
+
+button[disabled] {
+  background-color: grey;
+  cursor: not-allowed;
+}
+
+/* --- Radios de urgencia --- */
+.form-check-input:checked {
+  background-color: orange;
+  border-color: orange;
+}
+.form-check-label {
+  margin-left: 0.25rem;
+  color: orange;
+}
+
+/* --- Mensajes de error --- */
+.form-text.text-danger,
+small {
+  font-size: 0.8em;
+  color: #ff4d4d;
+  margin-top: -5px;
+  display: block;
+}
+
+/* --- Sección del mapa --- */
+.location {
+  background-color: #111;
+  color: orange;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+  border-top: 2px solid orange;
+}
+.location iframe {
+  border-radius: 8px;
+}
+
+/* --- Animación de entrada --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  .contact-form input, .contact-form textarea, .contact-form button {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .contact-form button {
-    background-color: gold;
-    color: black;
-    cursor: pointer;
-  }
-  
-  .location iframe {
-    border-radius: 8px;
-  }
-  
+}
+
+/* Asegura que los radios estén en línea */
+.urgencia-radios {
+  display: flex;
+  gap: 1rem; /* Espacio entre radios */
+  flex-wrap: wrap; /* Para que se acomoden si no hay espacio horizontal */
+  margin-bottom: 1rem;
+}
+
+/* Tamaño y estilo normal del radio */
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.form-check-input {
+  width: 1em;
+  height: 1em;
+  margin: 0;
+}

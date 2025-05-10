@@ -1,12 +1,223 @@
-<section class="contact-form">
-    <h2>Contáctanos</h2>
-    <form>
-      <input type="text" placeholder="Nombre" required>
-      <input type="email" placeholder="Correo" required>
-      <textarea placeholder="Mensaje" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
+<div class="fondo-con-imagen">
+  <div class="contenido-formulario">
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+          <div class="card bg-dark text-warning shadow-lg border-warning">
+            <div class="card-body">
+              <h3 class="card-title text-center mb-4">Contáctanos</h3>
+
+              <form #formulario="ngForm" (ngSubmit)="enviarFormulario(formulario)">
+                <div class="mb-3">
+                  <label for="nombre" class="form-label">Nombre:</label>
+                  <input
+                    id="nombre"
+                    name="nombre"
+                    type="text"
+                    class="form-control bg-dark text-warning border-warning"
+                    [(ngModel)]="contacto.nombre"
+                    required
+                    minlength="3"
+                    #nombre="ngModel"
+                    placeholder="Tu nombre completo"
+                  />
+                  @if (nombre.invalid && nombre.touched) {
+                    <div class="form-text text-danger">
+                      @if (nombre.errors?.['required']) {
+                        <small>El nombre es obligatorio.</small>
+                      }
+                      @if (nombre.errors?.['minlength']) {
+                        <small>Debe tener al menos 3 caracteres.</small>
+                      }
+                    </div>
+                  }
+                </div>
+
+                <div class="mb-3">
+                  <label for="correo" class="form-label">Correo:</label>
+                  <input
+                    id="correo"
+                    name="correo"
+                    type="email"
+                    class="form-control bg-dark text-warning border-warning"
+                    [(ngModel)]="contacto.correo"
+                    required
+                    email
+                    #correo="ngModel"
+                    placeholder="ejemplo@correo.com"
+                  />
+                  @if (correo.invalid && correo.touched) {
+                    <div class="form-text text-danger">
+                      @if (correo.errors?.['required']) {
+                        <small>El correo es obligatorio.</small>
+                      }
+                      @if (correo.errors?.['email']) {
+                        <small>Debe ser un correo válido.</small>
+                      }
+                    </div>
+                  }
+                </div>
+
+                <div class="mb-3">
+                  <label for="asunto" class="form-label">Asunto:</label>
+                  <input
+                    id="asunto"
+                    name="asunto"
+                    type="text"
+                    class="form-control bg-dark text-warning border-warning"
+                    [(ngModel)]="contacto.asunto"
+                    required
+                    minlength="5"
+                    #asunto="ngModel"
+                    placeholder="Motivo del mensaje"
+                  />
+                  @if (asunto.invalid && asunto.touched) {
+                    <div class="form-text text-danger">
+                      @if (asunto.errors?.['required']) {
+                        <small>El asunto es obligatorio.</small>
+                      }
+                      @if (asunto.errors?.['minlength']) {
+                        <small>Debe tener al menos 5 caracteres.</small>
+                      }
+                    </div>
+                  }
+                </div>
+
+                <div class="mb-3">
+                  <label for="motivo" class="form-label">Motivo de contacto:</label>
+                  <select
+                    id="motivo"
+                    name="motivo"
+                    class="form-control bg-dark text-warning border-warning"
+                    [(ngModel)]="contacto.motivo"
+                    required
+                    #motivo="ngModel"
+                  >
+                    <option value="" disabled selected>Selecciona un motivo</option>
+                    @for (m of motivos; track m) {
+                      <option [value]="m">{{ m }}</option>
+                    }
+                  </select>
+                  @if (motivo.invalid && motivo.touched) {
+                    <div class="form-text text-danger">
+                      <small>Debes seleccionar un motivo.</small>
+                    </div>
+                  }
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Urgencia del mensaje:</label>
+                  <div class="urgencia-radios">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        id="urgencia-baja"
+                        name="urgencia"
+                        [(ngModel)]="contacto.urgencia"
+                        value="Baja"
+                        required
+                        #urgencia="ngModel"
+                      />
+                      <label class="form-check-label" for="urgencia-baja">Baja</label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        id="urgencia-normal"
+                        name="urgencia"
+                        [(ngModel)]="contacto.urgencia"
+                        value="Normal"
+                        required
+                      />
+                      <label class="form-check-label" for="urgencia-normal">Normal</label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        id="urgencia-alta"
+                        name="urgencia"
+                        [(ngModel)]="contacto.urgencia"
+                        value="Urgente"
+                        required
+                      />
+                      <label class="form-check-label" for="urgencia-alta">Urgente</label>
+                    </div>
+                  </div>
+                  @if (urgencia.invalid && urgencia.touched) {
+                    <div class="form-text text-danger">
+                      <small>Debes seleccionar el nivel de urgencia.</small>
+                    </div>
+                  }
+                </div>
+
+                <div class="mb-3">
+                  <label for="mensaje" class="form-label">Mensaje:</label>
+                  <textarea
+                    id="mensaje"
+                    name="mensaje"
+                    class="form-control bg-dark text-warning border-warning"
+                    [(ngModel)]="contacto.mensaje"
+                    required
+                    minlength="10"
+                    #mensaje="ngModel"
+                    placeholder="Escribe tu mensaje..."
+                    rows="4"
+                  ></textarea>
+                  @if (mensaje.invalid && mensaje.touched) {
+                    <div class="form-text text-danger">
+                      @if (mensaje.errors?.['required']) {
+                        <small>El mensaje es obligatorio.</small>
+                      }
+                      @if (mensaje.errors?.['minlength']) {
+                        <small>Debe tener al menos 10 caracteres.</small>
+                      }
+                    </div>
+                  }
+                </div>
+
+                <div class="mb-3">
+                  <label for="fecha" class="form-label">Fecha de contacto:</label>
+                  <input
+                    id="fecha"
+                    name="fecha"
+                    type="date"
+                    class="form-control bg-dark text-warning border-warning"
+                    [(ngModel)]="contacto.fecha"
+                    required
+                    [min]="fechaMinima"
+                    #fecha="ngModel"
+                  />
+                  @if ((fecha.invalid && fecha.touched) || esFechaAnterior()) {
+                    <div class="form-text text-danger">
+                      @if (fecha.errors?.['required']) {
+                        <small>La fecha es obligatoria.</small>
+                      }
+                      @if (esFechaAnterior()) {
+                        <small>No puedes seleccionar una fecha anterior a hoy.</small>
+                      }
+                    </div>
+                  }
+                </div>
+
+                <button
+                  type="submit"
+                  class="btn btn-warning w-100"
+                  [disabled]="formulario.invalid || esFechaAnterior()"
+                >
+                  Enviar Mensaje
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
   
   <section class="location">
     <h2>Encuéntranos</h2>
@@ -18,5 +229,4 @@
       allowfullscreen=""
       loading="lazy">
     </iframe>
-  </section>
-  
+  </section>  
