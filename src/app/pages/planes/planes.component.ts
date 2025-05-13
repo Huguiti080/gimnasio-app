@@ -1,14 +1,17 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { DomseguroPipe } from '../../pipes/domseguro.pipe';
 
 @Component({
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, DomseguroPipe],
   templateUrl: './planes.component.html',
   styleUrls: ['./planes.component.css']
 })
 export class PlanesComponent {
+
+  videoId: string = 'p9PRsicnH4HqyT7T';
   
   faqs = [
     {
