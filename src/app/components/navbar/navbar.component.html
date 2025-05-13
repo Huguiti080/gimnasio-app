@@ -1,24 +1,25 @@
 <nav>
-
-
   <ul>
-    <li><a routerLink="/Inicio" routerLinkActive="active">Inicio</a></li>
-    <li><a routerLink="/Planes" routerLinkActive="active">Planes</a></li>
-    <li><a routerLink="/clases" routerLinkActive="active">Clases</a></li>
-    <li><a routerLink="/servicios" routerLinkActive="active">Regístrate</a></li>
-    <li><a routerLink="/contacto" routerLinkActive="active">Contacto</a></li>
+    <!-- Modificado para usar navigateTo() -->
+    <li><a (click)="navigateTo('inicio')" [class.active]="isActive('inicio')">Inicio</a></li>
+    <li><a (click)="navigateTo('Planes')" [class.active]="isActive('planes')">Planes</a></li>
+    <li><a (click)="navigateTo('clases')" [class.active]="isActive('clases')">Clases</a></li>
+    <li><a (click)="navigateTo('servicios')" [class.active]="isActive('servicios')">Regístrate</a></li>
+    <li><a (click)="navigateTo('contacto')" [class.active]="isActive('contacto')">Contacto</a></li>
+    
+    <!-- Item condicional para usuarios logueados -->
     <li *ngIf="isLoggedIn">
-      <a routerLink="/registro" routerLinkActive="active">Registros</a>
+      <a (click)="navigateTo('registro')" [class.active]="isActive('registro')">Registros</a>
     </li>
 
-    <button *ngIf="!isLoggedIn" class="btn-login" routerLink="/login">
+    <!-- Botón de login (modificado para emitir evento) -->
+    <button *ngIf="!isLoggedIn" class="btn-login" (click)="login()">
       <i class="fas fa-user"></i> Iniciar Sesión
     </button>
-
   </ul>
 
   <div class="auth-container">
-
+    <!-- Área de usuario logueado -->
     <div *ngIf="isLoggedIn" class="user-info">
       <span class="welcome-message">¡Bienvenido, {{ userName }}!</span>
       <button class="btn-logout" (click)="logout()">

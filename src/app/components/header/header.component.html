@@ -6,5 +6,10 @@
     <p class="lema">Unidos por la fuerza, imparables en el proceso</p>
   </div>
 
-  <app-navbar></app-navbar>
+  <app-navbar 
+    [user]="user"
+    (menuItemClicked)="handleNavbarEvent({type: 'menuItemClicked', data: $event})"
+    (loginRequested)="handleNavbarEvent({type: 'loginRequested'})"
+    (logoutRequested)="handleNavbarEvent({type: 'logoutRequested'})">
+  </app-navbar>
 </header>
