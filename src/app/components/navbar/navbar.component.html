@@ -1,5 +1,5 @@
 <nav>
-  
+
 
   <ul>
     <li><a routerLink="/Inicio" routerLinkActive="active">Inicio</a></li>
@@ -9,13 +9,16 @@
     <li><a routerLink="/contacto" routerLinkActive="active">Contacto</a></li>
     <li *ngIf="isLoggedIn">
       <a routerLink="/registro" routerLinkActive="active">Registros</a>
-    </li>  
+    </li>
+
+    <button *ngIf="!isLoggedIn" class="btn-login" routerLink="/login">
+      <i class="fas fa-user"></i> Iniciar Sesión
+    </button>
+
   </ul>
 
   <div class="auth-container">
-    <button *ngIf="!isLoggedIn" class="btn-login" (click)="login()">
-      <i class="fas fa-user"></i> Iniciar Sesión
-    </button>
+
     <div *ngIf="isLoggedIn" class="user-info">
       <span class="welcome-message">¡Bienvenido, {{ userName }}!</span>
       <button class="btn-logout" (click)="logout()">
