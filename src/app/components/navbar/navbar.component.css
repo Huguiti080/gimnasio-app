@@ -17,6 +17,8 @@ nav ul li a {
   color: white;
   text-decoration: none;
   font-size: 16px;
+  cursor: pointer;
+  transition: color 0.3s;
 }
 
 nav ul li a:hover {
@@ -24,7 +26,8 @@ nav ul li a:hover {
 }
 
 .auth-container {
-  margin-left: 30px; /* Ajusta este valor al espacio que desees */
+  margin-left: 30px;
+  /* Ajusta este valor al espacio que desees */
 }
 
 .btn-login {
@@ -62,7 +65,7 @@ nav ul li a:hover {
 
 .btn-logout {
   background-color: transparent;
-  color: #333;
+  color: #f3f0f0;
   border: 1px solid #ffc107;
   padding: 6px 12px;
   border-radius: 4px;
