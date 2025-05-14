@@ -11,7 +11,7 @@ import { DomseguroPipe } from '../../pipes/domseguro.pipe';
 })
 export class PlanesComponent {
 
-  videoId: string = 'p9PRsicnH4HqyT7T';
+  videoId: string = 'tUykoP30Gb0';
   
   faqs = [
     {

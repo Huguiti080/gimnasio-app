@@ -17,7 +17,7 @@ export const routes: Routes = [
   { path: 'Planes', component: PlanesComponent },
   { path: 'clases', component: ClasesComponent },
   { path: 'servicios', component: ServiciosComponent },
-  { path: 'productos', loadComponent: () => import('./pages/productos/productos.component').then(m => m.ProductosComponent) },
+  { path: 'productos', component: ProductosComponent },
   { path: 'contacto', component: ContactoComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registro', component: RegistroComponent },
