@@ -113,11 +113,17 @@
                 <a href="#" class="class-cta">Descargar</a>
             </div>
             <div class="resource-card">
-                <div class="resource-icon">📹</div>
-                <h3 class="resource-title">Videos instructivos</h3>
-                <p class="resource-description">Tutoriales para practicar desde casa y mejorar tu técnica.</p>
-                <a href="#" class="class-cta">Ver videos</a>
-            </div>
-        </div>
-    </div>
+  <div class="resource-icon">📹</div>
+  <h3 class="resource-title">Videos instructivos</h3>
+  <p class="resource-description">Tutoriales para practicar desde casa y mejorar tu técnica.</p>
+
+<div class="video-container">
+  <iframe
+    width="100%"
+    height="315"
+    [src]="'https://www.youtube.com/embed/' + videoId | domseguro"
+    frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
 </div>

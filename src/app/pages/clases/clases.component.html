@@ -1,251 +1,136 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forza Unity - Clases</title>
-</head>
-<body>
-    <div class="container">
-        <!-- Encabezado de la sección -->
-        <div class="section-header">
-            <h1 class="section-title">Nuestras Clases</h1>
-            <p class="section-subtitle">Descubre nuestra variedad de clases diseñadas para todos los niveles. Unidos por la fuerza, imparables en el proceso.</p>
-        </div>
-        
-        <!-- Filtro de clases -->
-        <div class="class-filter">
-            <button class="filter-btn active">Todas</button>
-            <button class="filter-btn">Zumba</button>
-            <button class="filter-btn">Yoga</button>
-            <button class="filter-btn">CrossFit</button>
-            <button class="filter-btn">Spinning</button>
-        </div>
-        
-        <!-- Tarjetas de clases -->
-        <div class="class-cards">
-            <!-- Zumba -->
-            <div class="class-card">
-                <div class="class-image zumba-img"></div>
-                <div class="class-details">
-                    <h3 class="class-name">Zumba</h3>
-                    <p class="class-description">Combina movimientos de baile con rutinas aeróbicas para una experiencia de fitness divertida y efectiva.</p>
-                    <div class="class-meta">
-                        <div class="meta-item">
-                            <span class="meta-icon">⏱️</span>
-                            <span>60 min</span>
-                        </div>
-                        <div class="meta-item">
-                            <span class="meta-icon">🔥</span>
-                            <span>Media</span>
-                        </div>
-                    </div>
-                    <a href="#schedule" class="class-cta">Ver horarios</a>
-                </div>
-            </div>
-            
-            <!-- Yoga -->
-            <div class="class-card">
-                <div class="class-image yoga-img"></div>
-                <div class="class-details">
-                    <h3 class="class-name">Yoga</h3>
-                    <p class="class-description">Conecta cuerpo y mente a través de posturas, respiración y meditación para mejorar flexibilidad y reducir estrés.</p>
-                    <div class="class-meta">
-                        <div class="meta-item">
-                            <span class="meta-icon">⏱️</span>
-                            <span>75 min</span>
-                        </div>
-                        <div class="meta-item">
-                            <span class="meta-icon">🔥</span>
-                            <span>Baja</span>
-                        </div>
-                    </div>
-                    <a href="#schedule" class="class-cta">Ver horarios</a>
-                </div>
-            </div>
-            
-            <!-- CrossFit -->
-            <div class="class-card">
-                <div class="class-image crossfit-img"></div>
-                <div class="class-details">
-                    <h3 class="class-name">CrossFit</h3>
-                    <p class="class-description">Entrenamiento funcional de alta intensidad que combina ejercicios cardiovasculares, gimnásticos y de levantamiento.</p>
-                    <div class="class-meta">
-                        <div class="meta-item">
-                            <span class="meta-icon">⏱️</span>
-                            <span>45 min</span>
-                        </div>
-                        <div class="meta-item">
-                            <span class="meta-icon">🔥</span>
-                            <span>Alta</span>
-                        </div>
-                    </div>
-                    <a href="#schedule" class="class-cta">Ver horarios</a>
-                </div>
-            </div>
-            
-            <!-- Spinning -->
-            <div class="class-card">
-                <div class="class-image spinning-img"></div>
-                <div class="class-details">
-                    <h3 class="class-name">Spinning</h3>
-                    <p class="class-description">Ciclismo indoor de alta energía con música motivadora y rutinas variadas para quemar calorías eficientemente.</p>
-                    <div class="class-meta">
-                        <div class="meta-item">
-                            <span class="meta-icon">⏱️</span>
-                            <span>50 min</span>
-                        </div>
-                        <div class="meta-item">
-                            <span class="meta-icon">🔥</span>
-                            <span>Alta</span>
-                        </div>
-                    </div>
-                    <a href="#schedule" class="class-cta">Ver horarios</a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Calendario de clases -->
-        <div id="schedule" class="schedule-section">
-            <div class="schedule-header">
-                <h2 class="schedule-title">Horario Semanal</h2>
-                <div class="schedule-nav">
-                    <button class="nav-btn">&#10094;</button>
-                    <span class="current-week">Mayo 1 - 7, 2025</span>
-                    <button class="nav-btn">&#10095;</button>
-                </div>
-            </div>
-            
-            <div class="schedule-table-container">
-                <table class="schedule-table">
-                    <thead>
-                        <tr>
-                            <th>Hora</th>
-                            <th>Lunes</th>
-                            <th>Martes</th>
-                            <th>Miércoles</th>
-                            <th>Jueves</th>
-                            <th>Viernes</th>
-                            <th>Sábado</th>
-                            <th>Domingo</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="time-col">07:00 - 08:00</td>
-                            <td>
-                                <span class="class-pill class-crossfit">CrossFit</span>
-                                <span class="instructor-name">Hugo VH.</span>
-                            </td>
-                            <td>
-                                <span class="class-pill class-spinning">Spinning</span>
-                                <span class="instructor-name">Laura V.</span>
-                            </td>
-                            <td>
-                                <span class="class-pill class-crossfit">CrossFit</span>
-                                <span class="instructor-name">Hugo VH.</span>
-                            </td>
-                            <td>
-                                <span class="class-pill class-spinning">Spinning</span>
-                                <span class="instructor-name">Laura V.</span>
-                            </td>
-                            <td>
-                                <span class="class-pill class-crossfit">CrossFit</span>
-                                <span class="instructor-name">Hugo VH.</span>
-                            </td>
-                            <td>
-                                <span class="class-pill class-yoga">Yoga</span>
-                                <span class="instructor-name">Angie G.</span>
-                            </td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td class="time-col">09:00 - 10:00</td>
-                            <td>
-                                <span class="class-pill class-zumba">Zumba</span>
-                                <span class="instructor-name">Sofía R.</span>
-                            </td>
-                            <td>
-                                <span class="class-pill class-yoga">Yoga</span>
-                                <span class="instructor-name">Angie G.</span>
-                            </td>
-                            <td>
-                                <span class="class-pill class-zumba">Zumba</span>
-                                <span class="instructor-name">Sofía R.</span>
-                            </td>
-                            <td>
-                                <span class="class-pill class-yoga">Yoga</span>
-                                <span class="instructor-name">Angie G.</span>
-                            </td>
-                            <td>
-                                <span class="class-pill class-zumba">Zumba</span>
-                                <span class="instructor-name">Sofía R.</span>
-                            </td>
-                            <td>
-                                <span class="class-pill class-crossfit">CrossFit</span>
-                                <span class="instructor-name">Hugo VH.</span>
-                            </td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td class="time-col">17:00 - 18:00</td>
-                            <td>
-                                <span class="class-pill class-yoga">Yoga</span>
-                                <span class="instructor-name">María G.</span>
-                            </td>
-                            <td>
-                                <span class="class-pill class-zumba">Zumba</span>
-                                <span class="instructor-name">Sofía R.</span>
-                            </td>
-                            <td>
-                                <span class="class-pill class-yoga">Yoga</span>
-                                <span class="instructor-name">María G.</span>
-                            </td>
-                            <td>
-                                <span class="class-pill class-zumba">Zumba</span>
-                                <span class="instructor-name">Sofía R.</span>
-                            </td>
-                            <td>
-                                <span class="class-pill class-yoga">Yoga</span>
-                                <span class="instructor-name">María G.</span>
-                            </td>
-                            <td>
-                                <span class="class-pill class-spinning">Spinning</span>
-                                <span class="instructor-name">Laura V.</span>
-                            </td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td class="time-col">19:00 - 20:00</td>
-                            <td>
-                                <span class="class-pill class-spinning">Spinning</span>
-                                <span class="instructor-name">Laura V.</span>
-                            </td>
-                            <td>
-                                <span class="class-pill class-crossfit">CrossFit</span>
-                                <span class="instructor-name">Hugo VH.</span>
-                            </td>
-                            <td>
-                                <span class="class-pill class-spinning">Spinning</span>
-                                <span class="instructor-name">Laura V.</span>
-                            </td>
-                            <td>
-                                <span class="class-pill class-crossfit">CrossFit</span>
-                                <span class="instructor-name">Hugo VH.</span>
-                            </td>
-                            <td>
-                                <span class="class-pill class-spinning">Spinning</span>
-                                <span class="instructor-name">Laura v.</span>
-                            </td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        
+<div class="container">
+  <div class="section-header">
+    <h1 class="section-title">Nuestras Clases</h1>
+    <p class="section-subtitle">
+      Descubre nuestra variedad de clases diseñadas para todos los niveles. Unidos por la fuerza, imparables en el proceso.
+    </p>
+  </div>
 
-    </div>
-</body>
-</html>
+  <div class="filter-group">
+    <mat-button-toggle-group name="claseFiltro" aria-label="Filtro de clases" appearance="standard">
+      <mat-button-toggle value="todas">Todas</mat-button-toggle>
+      <mat-button-toggle value="zumba">Zumba</mat-button-toggle>
+      <mat-button-toggle value="yoga">Yoga</mat-button-toggle>
+      <mat-button-toggle value="crossfit">CrossFit</mat-button-toggle>
+      <mat-button-toggle value="spinning">Spinning</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+  <div class="clases-grid">
+    <mat-card class="clase-card" appearance="outlined">
+      <mat-card-header>
+        <div mat-card-avatar class="zumba-img"></div>
+        <mat-card-title>Zumba</mat-card-title>
+        <mat-card-subtitle>Cardio / Diversión</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image class="clase-imagen" src="assets/imagenes/zumba.jpg" alt="Zumba">
+      <mat-card-content class="clase-info">
+        <p class="descripcion">
+          Combina movimientos de baile con rutinas aeróbicas para una experiencia de fitness divertida y efectiva.
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="accent">Ver horarios</button>
+      </mat-card-actions>
+    </mat-card>
+
+    <mat-card class="clase-card" appearance="outlined">
+      <mat-card-header>
+        <div mat-card-avatar class="yoga-img"></div>
+        <mat-card-title>Yoga</mat-card-title>
+        <mat-card-subtitle>Relajación / Flexibilidad</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image class="clase-imagen" src="assets/imagenes/yoga.jpg" alt="Yoga">
+      <mat-card-content class="clase-info">
+        <p class="descripcion">
+          Conecta cuerpo y mente a través de posturas, respiración y meditación para mejorar flexibilidad y reducir estrés.
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="accent">Ver horarios</button>
+      </mat-card-actions>
+    </mat-card>
+
+    <mat-card class="clase-card" appearance="outlined">
+      <mat-card-header>
+        <div mat-card-avatar class="crossfit-img"></div>
+        <mat-card-title>CrossFit</mat-card-title>
+        <mat-card-subtitle>Alta Intensidad</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image class="clase-imagen" src="assets/imagenes/crossfit.jpg" alt="CrossFit">
+      <mat-card-content class="clase-info">
+        <p class="descripcion">
+          Entrenamiento funcional de alta intensidad que combina ejercicios cardiovasculares, gimnásticos y de levantamiento.
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="accent">Ver horarios</button>
+      </mat-card-actions>
+    </mat-card>
+
+    <mat-card class="clase-card" appearance="outlined">
+      <mat-card-header>
+        <div mat-card-avatar class="spinning-img"></div>
+        <mat-card-title>Spinning</mat-card-title>
+        <mat-card-subtitle>Ciclismo Indoor</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image class="clase-imagen" src="assets/imagenes/spinning.jpg" alt="Spinning">
+      <mat-card-content class="clase-info">
+        <p class="descripcion">
+          Ciclismo indoor de alta energía con música motivadora y rutinas variadas para quemar calorías eficientemente.
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="accent">Ver horarios</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <h2 class="schedule-title">Horario Semanal</h2>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 tabla-horarios">
+    <ng-container matColumnDef="hora">
+      <th mat-header-cell *matHeaderCellDef>Hora</th>
+      <td mat-cell *matCellDef="let row">{{row.hora}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="lunes">
+      <th mat-header-cell *matHeaderCellDef>Lunes</th>
+      <td mat-cell *matCellDef="let row">{{row.lunes}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="martes">
+      <th mat-header-cell *matHeaderCellDef>Martes</th>
+      <td mat-cell *matCellDef="let row">{{row.martes}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="miercoles">
+      <th mat-header-cell *matHeaderCellDef>Miércoles</th>
+      <td mat-cell *matCellDef="let row">{{row.miercoles}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="jueves">
+      <th mat-header-cell *matHeaderCellDef>Jueves</th>
+      <td mat-cell *matCellDef="let row">{{row.jueves}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="viernes">
+      <th mat-header-cell *matHeaderCellDef>Viernes</th>
+      <td mat-cell *matCellDef="let row">{{row.viernes}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="sabado">
+      <th mat-header-cell *matHeaderCellDef>Sábado</th>
+      <td mat-cell *matCellDef="let row">{{row.sabado}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="domingo">
+      <th mat-header-cell *matHeaderCellDef>Domingo</th>
+      <td mat-cell *matCellDef="let row">{{row.domingo}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <button mat-flat-button color="primary" (click)="abrirSnackBar()">¡Más info!</button>
+</div>
