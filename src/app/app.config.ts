@@ -10,7 +10,7 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideHttpClient() ,
-    importProvidersFrom(FontAwesomeModule), // Importa FontAwesomeModule
+    importProvidersFrom(FontAwesomeModule), 
     {
       provide: FaIconLibrary,
       useFactory: () => {

@@ -12,7 +12,7 @@ import { AuthService } from '../../services/auth.service';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  // Input para recibir estado desde el padre (opcional - puedes mantener tu suscripción actual)
+  
   @Input() set user(user: { fullName: string } | null) {
     this.isLoggedIn = !!user;
     if (user) {
@@ -20,7 +20,7 @@ export class NavbarComponent {
     }
   }
 
-  // Outputs para comunicar eventos al padre
+  
   @Output() loginRequested = new EventEmitter<void>();
   @Output() logoutRequested = new EventEmitter<void>();
   @Output() menuItemClicked = new EventEmitter<string>();
@@ -30,26 +30,26 @@ export class NavbarComponent {
 
   constructor(private authService: AuthService, private router: Router) {}
 
-  // Versión modificada de tu método login
+  
   login(): void {
-    this.loginRequested.emit(); // Emite al padre
-    this.router.navigate(['/login']); // Mantiene tu navegación actual
+    this.loginRequested.emit(); 
+    this.router.navigate(['/login']); 
   }
 
-  // Versión modificada de tu método logout
+  
   logout(): void {
-    this.logoutRequested.emit(); // Emite al padre
+    this.logoutRequested.emit(); 
     this.authService.logout();
     this.router.navigate(['/inicio']);
   }
 
-  // Nuevo método para items del menú
+  
   navigateTo(route: string): void {
-    this.menuItemClicked.emit(route); // Emite al padre
-    this.router.navigate([route]); // Mantiene navegación
+    this.menuItemClicked.emit(route); 
+    this.router.navigate([route]); 
   }
 
-    // Método para verificar ruta activa
+    
   isActive(route: string): boolean {
     return this.router.url.includes(route);
   }
